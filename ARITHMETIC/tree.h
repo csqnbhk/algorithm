@@ -14,6 +14,7 @@ struct tree
 	int tree_data;
 	tree*lchild;
 	tree*rchild;
+	
 };
 struct no_r_struct
 {

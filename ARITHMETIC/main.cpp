@@ -8,7 +8,7 @@ int main()
 	tree*tree_E = new tree;
 	tree*tree_F = new tree;
 	shared_ptr<handle_tree> my_handle_tree(new handle_tree(tree_A, tree_B, tree_C, tree_D, tree_E, tree_F));
-
+	
 	cout << "先序遍历如下:" << endl;
 	my_handle_tree->r_x_tra(my_handle_tree->get_sp_root().get());
 	cout << endl;
@@ -33,6 +33,13 @@ int main()
 	cout << "非递归,后序遍历:" << endl;
 	my_handle_tree->no_r_h_tra(my_handle_tree->get_sp_root().get());
 	cout << endl;
+
+
+	cout << "***********************求树叶子节点,节点数,深度********************" << endl;
+	cout << "叶子节点数:" << my_handle_tree->get_leafnodes(my_handle_tree->get_sp_root().get()) << endl;
+	cout << "节点数：" << my_handle_tree->get_nodes(my_handle_tree->get_sp_root().get()) << endl;
+	cout << "树的深度为:" << my_handle_tree->get_depth(my_handle_tree->get_sp_root().get()) << endl;
+
 
 	return 0;
 }

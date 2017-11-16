@@ -39,6 +39,14 @@ class handle_tree
 	 void no_r_x_tra(tree*p);
 	 void no_r_z_tra(tree*p);
 	 void no_r_h_tra(tree*p);
+	 //求叶子节点
+	 int get_leafnodes(tree*p);
+	 //求节点
+	 int get_nodes(tree*p);
+	 //求深度
+	 int get_depth(tree*p);
+
+
 
 private:
 	tree*stack[TREE_NUM];

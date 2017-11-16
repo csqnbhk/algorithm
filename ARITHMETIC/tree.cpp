@@ -181,3 +181,49 @@ void handle_tree::no_r_h_tra(tree*p)
 
 	
 }
+//求叶子节点
+int handle_tree::get_leafnodes(tree*p)
+{
+	int lnodes = 0, rnodes = 0;
+	if (p == nullptr)
+		return 0;
+	if (p->lchild == nullptr&&p->rchild == nullptr)
+		return 1;
+	else
+	{
+		lnodes = get_leafnodes(p->lchild);
+		rnodes = get_leafnodes(p->rchild);
+		return lnodes + rnodes;
+	}
+	
+
+}
+//求节点
+int handle_tree::get_nodes(tree*p)
+{
+	int lnodes = 0, rnodes;
+	if (p == nullptr)
+		return 0;
+	if (p->lchild == nullptr&&p->rchild == nullptr)
+		return 1;
+	else
+	{
+		lnodes = get_nodes(p->lchild);
+		rnodes = get_nodes(p->rchild);
+		return (lnodes + rnodes + 1);
+	}
+
+}
+//求深度
+int handle_tree::get_depth(tree*p)
+{
+	int lnodes = 0, rnodes = 0;
+	if (p == nullptr)
+		return 0;
+	else
+	{
+		lnodes = get_depth(p->lchild);
+		rnodes = get_depth(p->rchild);
+		return (lnodes > rnodes) ? (lnodes + 1) : (rnodes + 1);
+	}
+}
